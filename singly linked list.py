@@ -33,3 +33,4 @@ class LinkedList:
             curr = curr.next
         print()
         
+        
