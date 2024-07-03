@@ -30,5 +30,6 @@ class LinkedList:
         curr = self.head.next
         while curr:
             print(curr.val, ' -> ')
-            curr = curr.next
-        print()
+            curr = curr.next123123
+        Add line 1
+        Add line 2
