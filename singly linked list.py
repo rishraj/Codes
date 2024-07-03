@@ -32,5 +32,3 @@ class LinkedList:
             print(curr.val, ' -> ')
             curr = curr.next
         print()
-        
-        
