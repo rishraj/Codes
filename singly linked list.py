@@ -27,7 +27,7 @@ class LinkedList:
             curr.next = curr.next.next
 
     def print(self):
-        curr = self.head.next
+        hahahacurr = self.head.next
         while curr:
             print(curr.val, ' -> ')
             curr = curr.next123123
