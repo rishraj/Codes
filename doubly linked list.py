@@ -45,4 +45,4 @@ class LinkedList:
         while curr != self.tail:
             print(curr.val, " -> ")
             curr = curr.next
-        print()
+        print_waala()
