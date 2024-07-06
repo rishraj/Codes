@@ -18,6 +18,9 @@ class Solution:
             div /= 100
             
         return True
+    
+        # if we convert x to a string:
+        
         """ x = str(x)
         left, right = 0, len(x)-1
         while left < right:
