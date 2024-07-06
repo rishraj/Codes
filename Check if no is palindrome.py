@@ -4,18 +4,18 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0:
             return False
-        elif x == 0:
-            return True
         
-        digits = floor(log10(x)) + 1
-        p = pow(10, digits-1)
-        
-        for i in range(digits // 2):
-            if (x // p) != (x % 10):
+        # div could also be found using 10^(digits-1) where digits = floor(log10(x))+1
+        div = 1
+        while x >= div * 10:
+                div *= 10
+
+        while x:
+            if (x // div) != (x % 10):
                 return False
-            x = x % p
-            x = x // 10
-            p /= 100
+            
+            x = (x % div) // 10
+            div /= 100
             
         return True
         """ x = str(x)
