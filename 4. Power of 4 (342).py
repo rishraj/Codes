@@ -15,6 +15,5 @@ class Solution:
             if n&0x55555555:
                 return True
         return False """
-
-
         
+print (Solution().isPowerOfFour(int(input("Enter n: "))))
