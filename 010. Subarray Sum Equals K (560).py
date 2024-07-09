@@ -30,7 +30,7 @@ def subarraySum(nums: list[int], k: int):
     # Calculate sum of (0, i) using cur, find if required sum of (0, j) is present and finally,
     # store (0, i) to later use as (0, j) for some other i
     cur, res = 0, 0
-    d = {0: 1} # imagine 1 empty prefix with sum = 0 (to cover edge case of nums = [1, 1] and k = 2)
+    d = {0: 1} # imagine 1 empty prefix with sum = 0 (to consider entire subarray (0, i)) (otherwise nums = [2] & k = 2 fails)
     for num in nums:
         cur += num
         res += d.get(cur - k, 0)
