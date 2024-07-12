@@ -1,8 +1,10 @@
+from collections import Counter
+from functools import reduce
 def wordSubsets(words1: list[str], words2: list[str]) -> list[str]:
     # combine all words2 list in a single dict; but think about how this should be done
     # for the next time, reduce size of dict d; don't need to have all alphabets as keys (see notes)
     
-    res = []
+    """ res = []
     d = {chr(key): 0 for key in range(ord('a'), ord('z') + 1)}
     for w2 in words2:
         w2_dict = {}
@@ -21,7 +23,29 @@ def wordSubsets(words1: list[str], words2: list[str]) -> list[str]:
                 break
         if not flag:
             res.append(w1)
-    return res
+    return res """
+    
+    #######################################################################
+    # pythonic way
+    # Counter is a dict subclass to count hashable objects
+    """ 
+    c = Counter(a=3, b=1)
+    d = Counter(a=1, b=2)
+    c + d                       # add two counters together:  c[x] + d[x]
+    output = Counter({'a': 4, 'b': 3})
+    c - d                       # subtract (keeping only positive counts)
+    output = Counter({'a': 2})
+    c & d                       # intersection:  min(c[x], d[x])
+    output = Counter({'a': 1, 'b': 1})
+    c | d                       # union:  max(c[x], d[x])
+    output = Counter({'a': 3, 'b': 2})
+    c == d                      # equality:  c[x] == d[x]
+    output = False
+    c <= d                      # inclusion/subset:  c[x] <= d[x]
+    output = False
+    """
+    d = reduce(lambda x, y: x | y, map(Counter, words2))
+    return [w1 for w1 in words1 if Counter(w1) >= d]
 
 words1 = ["amazon","apple","facebook","google","leetcode"]
 words2 = ["lo","eo"]
