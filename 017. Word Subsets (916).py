@@ -26,7 +26,7 @@ def wordSubsets(words1: list[str], words2: list[str]) -> list[str]:
     return res """
     
     #######################################################################
-    # pythonic way
+    # pythonic way (though slower coz of module dependencies)
     # Counter is a dict subclass to count hashable objects
     """ 
     c = Counter(a=3, b=1)
