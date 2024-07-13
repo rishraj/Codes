@@ -1,5 +1,5 @@
 class Solution:
-    def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def oddEvenList(self, head):
         # did this purely by example anaysis (no use trying to understand this code after some time)
         
         # methodical soln in notebook (basically keep 2 pointers and a counter to
