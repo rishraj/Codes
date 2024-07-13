@@ -1,5 +1,10 @@
 class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # did this purely by example anaysis (no use trying to understand this code after some time)
+        
+        # methodical soln in notebook (basically keep 2 pointers and a counter to
+        # split the list to 2 separate lists and then join them)
+        
         if not head:
             return head
         head_even = head.next
