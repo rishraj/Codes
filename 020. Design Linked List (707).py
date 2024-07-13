@@ -1,3 +1,8 @@
+# singly linked list + no tail = poor time (due to addAtTail)
+# doubly linked list = good time, but poor memory
+# singly linked list + tail = good time, good memory
+
+
 class Node:
     def __init__(self, val):
         # double linked list
@@ -9,10 +14,6 @@ class Node:
         self.next = None
 
 class MyLinkedList:
-
-    # singly linked list + no tail = poor time (due to addAtTail)
-    # doubly linked list = good time, but poor memory
-    # singly linked list + tail = good time, good memory
     def __init__(self):
         # double linked list
         """ self.left = Node(-1)
