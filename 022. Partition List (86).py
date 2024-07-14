@@ -1,6 +1,6 @@
 def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
     cur = head
-    l1_head, l2_head = ListNode(-1), ListNode(-1)
+    l1_head, l2_head = ListNode(-1), ListNode(-1) # dummy heads
     l1_tail, l2_tail = l1_head, l2_head
     while cur:
         if cur.val < x:
