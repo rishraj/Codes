@@ -1,5 +1,5 @@
 def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
-    # next attempt -> implement using a stack
+    # next attempt -> implement using a STACK
     
     # edge case (so that helper function node is never None)
     if not head: return head
