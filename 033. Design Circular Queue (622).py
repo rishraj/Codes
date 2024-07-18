@@ -50,31 +50,23 @@ class MyCircularQueue:
 
 # Array implementation of circular queue (practise this approach again, debugging took time :P)
 class MyCircularQueue:
-
     def __init__(self, k: int):
-        self.q = [None]*k
+        self.q = [None]*k # initialising the queue
         self.size = k
         self.cur_size = 0
-        self.first = -1
-        self.last = -1
+        self.first = 0
+        self.last = -1 # start at -1 so that 1st enQueue happens at 0 (imp)
 
     def enQueue(self, value: int) -> bool:
         if self.isFull(): return False
-        if self.isEmpty() and self.last == -1:
-            self.q[0] = value
-            self.first = 0
-            self.last = 0
-            self.cur_size += 1
-            return True
-        tmp = (self.last + 1) % self.size
-        self.q[tmp] = value
-        self.last = tmp
+        self.last = (self.last + 1) % self.size
+        self.q[self.last] = value
         self.cur_size += 1
         return True
 
     def deQueue(self) -> bool:
         if self.isEmpty(): return False
-        self.first = (self.first + 1) % self.size
+        self.first = (self.first + 1) % self.size # no need to remove earlier self.first (it's just garbage)
         self.cur_size -= 1
         return True
 
