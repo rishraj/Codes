@@ -48,7 +48,7 @@ class MyCircularQueue:
     def isFull(self) -> bool:
         return self.cur_size == self.size """
 
-# Array implementation of circular queue (practise this again, debugging took time :P)
+# Array implementation of circular queue (practise this approach again, debugging took time :P)
 class MyCircularQueue:
 
     def __init__(self, k: int):
