@@ -1,5 +1,5 @@
 def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-    res = []
+    res = [] # since list is mutable, self.res is not needed
     def helper(node):
         if not node: return
         helper(node.left)
