@@ -13,8 +13,8 @@ def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
     if not root: return root # edge case
     res, stack = [], [root]
     while stack: # here root will never be null (thus, "while root or stack:" not needed)
-        node = stack.pop()
-        res.append(node.val)
-        if node.right: stack.append(node.right) # right added before left so that it's popped later
-        if node.left: stack.append(node.left)
+        cur = stack.pop()
+        res.append(cur.val)
+        if cur.right: stack.append(cur.right) # right added before left so that it's popped later
+        if cur.left: stack.append(cur.left)
     return res

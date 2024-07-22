@@ -11,12 +11,12 @@ def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
     
     # iterative soln.
     # add all left childs to stack, pop last one, add to result and then change node to its right child
-    res, stack = [], []
-    while root or stack:
-        while root:
-            stack.append(root)
-            root = root.left
-        root = stack.pop()
-        res.append(root.val)
-        root = root.right
+    res, stack, cur = [], [], root
+    while cur or stack:
+        while cur:
+            stack.append(cur)
+            cur = cur.left
+        cur = stack.pop()
+        res.append(cur.val)
+        cur = cur.right
     return res
