@@ -1,5 +1,5 @@
 def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-    res = []
+    res = [] # list is mutable, hence self.res not needed
     def helper(node):
         if not node: return
         helper(node.left)
