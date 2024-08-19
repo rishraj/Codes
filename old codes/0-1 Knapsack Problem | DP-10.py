@@ -11,7 +11,7 @@ for i in range(n):
 max_wt = int(input("Enter the max. weight: "))
 
 
-# ----------------Bottom up approach--------------------------
+# ----------------Bottom up approach-------------------------
 dp = [[0 for x in range(max_wt+1)] for y in range(n+1)]
 
 for i in range(n+1):
