@@ -13,7 +13,7 @@
 #         self.right = right
 class Solution:
     def deleteNode(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        def minimum(node):
+        def minimum(node): # finding the minimum value in a binary tree
             while node and node.left:
                 node = node.left
             return node
@@ -29,7 +29,7 @@ class Solution:
                     return node.right
                 elif not node.right:
                     return node.left
-                else:
+                else: # replace node with the smallest value in its right subtree and remove that node
                     minNode = minimum(node.right)
                     node.val = minNode.val
                     node.right = delete(node.right, minNode.val)
