@@ -5,19 +5,39 @@
 #
 
 # @lc code=start
+
+class TrieNode:
+    def __init__(self):
+        self.children = {} # dictionary of {character: TrieNode object}
+        self.word = False # would be True if a word ends at this character
 class Trie:
 
     def __init__(self):
-        
+        self.root = TrieNode()
 
     def insert(self, word: str) -> None:
-        
+        curr = self.root
+        for ch in word:
+            if ch not in curr.children:
+                curr.children[ch] = TrieNode()
+            curr = curr.children[ch]
+        curr.word = True
 
     def search(self, word: str) -> bool:
-        
+        curr = self.root
+        for ch in word:
+            if ch not in curr.children:
+                return False
+            curr = curr.children[ch]
+        return curr.word
 
     def startsWith(self, prefix: str) -> bool:
-        
+        curr = self.root
+        for ch in prefix:
+            if ch not in curr.children:
+                return False
+            curr = curr.children[ch]
+        return True
 
 
 # Your Trie object will be instantiated and called as such:
