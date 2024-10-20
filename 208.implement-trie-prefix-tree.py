@@ -21,7 +21,7 @@ class Trie:
             if ch not in curr.children:
                 curr.children[ch] = TrieNode()
             curr = curr.children[ch]
-        curr.word = True
+        curr.word = True # important to do
 
     def search(self, word: str) -> bool:
         curr = self.root
@@ -29,7 +29,7 @@ class Trie:
             if ch not in curr.children:
                 return False
             curr = curr.children[ch]
-        return curr.word
+        return curr.word # important to prevent returning True in cases of prefix match
 
     def startsWith(self, prefix: str) -> bool:
         curr = self.root
